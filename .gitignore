@@ -1,0 +1,9 @@
+*.txt
+
+query_db.py
+setup_db.py
+/test
+.flaskappvenv
+/flaskapp/__pycache__
+/flaskapp/aws_creds.conf
+/flaskapp/site.db
