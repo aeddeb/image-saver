@@ -1,9 +1,12 @@
 *.txt
 
 query_db.py
-setup_db.py
 /test
 .flaskappvenv
 /flaskapp/__pycache__
 /flaskapp/aws_creds.conf
 /flaskapp/site.db
+
+/flaskapp/main/__pycache__
+/flaskapp/images/__pycache__
+/flaskapp/users/__pycache__

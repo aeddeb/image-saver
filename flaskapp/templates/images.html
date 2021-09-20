@@ -1,21 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
-    
-    <!--    <h2>{{ current_user.id }}</h2>
-    <h2>{{ current_user.username }}</h2>
-
-
- <img src="https://image-saver-app.s3.amazonaws.com/c8f85618f60bf4ae.jpg" style="width: 250px">
-{% for image in images %}
-<img src="{{ image.s3_path }}" style="width: 250px">
-{% endfor %}
-    -->
 
 <div class="container">
         <div class="col-lg-12">
             <h1 class="page-header">Image Gallery</h1>
         </div>
         <hr>
+    <p class="gen">
+        Click on <i>View Image</i> on any image below to open an Image Preview. The Image Preview 
+        page provides you with the options to download or delete the image.
+    </p>
     <div class="row">
         {% for image in images %}
         <div class="col-lg-3 col-md-4 col-xs-6 thumb">

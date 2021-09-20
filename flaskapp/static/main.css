@@ -9,7 +9,7 @@ body {
   }
   
   .bg-steel {
-    background-color: #436177;
+    background-color: #002f50;
   }
   
   .site-header .navbar-nav .nav-link {
@@ -81,4 +81,8 @@ body {
   
   img.gallery {
     padding-top: 10px;
+  }
+
+  .gen {
+    font-size: 120%;
   }
