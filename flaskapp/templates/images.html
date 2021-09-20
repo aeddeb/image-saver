@@ -13,14 +13,14 @@
 
 <div class="container">
         <div class="col-lg-12">
-            <h1 class="page-header">Images Gallery</h1>
+            <h1 class="page-header">Image Gallery</h1>
         </div>
         <hr>
     <div class="row">
         {% for image in images %}
         <div class="col-lg-3 col-md-4 col-xs-6 thumb">
             <img class="gallery" src="{{ image.s3_path }}" width="250: px">
-            <a href="{{ url_for('image', image_id=image.id) }}">View Image</a>
+            <a href="{{ url_for('images.image', image_id=image.id) }}">View Image</a>
         </div>
         {% endfor %}
     </div>

@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-<form method="POST" action=" {{ url_for('upload') }}" enctype="multipart/form-data">
+<form method="POST" action=" {{ url_for('images.upload') }}" enctype="multipart/form-data">
     {{ form.hidden_tag() }}
     <fieldset class="form-group">
     <legend class="border-bottom mb-4">Upload an Image</legend>
