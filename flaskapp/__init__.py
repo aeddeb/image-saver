@@ -13,11 +13,13 @@ login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'info'
 mail = Mail()
 
-
-
-def create_app(config_class=Config):
+def create_app(config_class=Config, testing=None):
     app = Flask(__name__)
-    app.config.from_object(Config)
+    app.config.from_object(config_class)
+
+    if testing:
+        # load the test config if passed in
+        app.config.update(testing)
 
     db.init_app(app)
     bcrypt.init_app(app)
