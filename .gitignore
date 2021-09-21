@@ -1,12 +1,17 @@
 *.txt
-
+!requirements.txt
 query_db.py
-/test
+aws_creds.conf
+
+/test/tests_archive.py
+/test/__pycache__
 .flaskappvenv
+
 /flaskapp/__pycache__
-/flaskapp/aws_creds.conf
 /flaskapp/site.db
 
 /flaskapp/main/__pycache__
 /flaskapp/images/__pycache__
 /flaskapp/users/__pycache__
+
+/.pytest_cache

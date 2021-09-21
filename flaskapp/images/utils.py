@@ -4,8 +4,9 @@ import os
 from flask_login import current_user
 from flaskapp import db
 from flaskapp.models import User, Image
-from configparser import ConfigParser
 import boto3
+
+
 
 def save_image(form_image):
     random_hex = secrets.token_hex(8)
@@ -18,13 +19,10 @@ def save_image(form_image):
 
 
 def upload_to_s3(image_name):
-    
-    parser = ConfigParser()
-    config_file = os.path.join(current_app.root_path, 'aws_creds.conf')
-    parser.read(config_file)
-    access_key = parser.get("aws_credentials", "access_key")
-    secret_key = parser.get("aws_credentials", "secret_key")
-    bucket_name = parser.get("aws_credentials", "bucket_name")
+    access_key = current_app.config['AWS_ACCESS_KEY']
+    secret_key = current_app.config['AWS_SECRET_KEY']
+    bucket_name = current_app.config['AWS_BUCKET_NAME']
+
     s3 = boto3.client('s3',
                     aws_access_key_id = access_key,
                     aws_secret_access_key = secret_key)
@@ -41,12 +39,10 @@ def upload_to_s3(image_name):
 
 def delete_from_s3(image_key):
     
-    parser = ConfigParser()
-    config_file = os.path.join(current_app.root_path, 'aws_creds.conf')
-    parser.read(config_file)
-    access_key = parser.get("aws_credentials", "access_key")
-    secret_key = parser.get("aws_credentials", "secret_key")
-    bucket_name = parser.get("aws_credentials", "bucket_name")
+    access_key = current_app.config['AWS_ACCESS_KEY']
+    secret_key = current_app.config['AWS_SECRET_KEY']
+    bucket_name = current_app.config['AWS_BUCKET_NAME']
+    
     s3 = boto3.client('s3',
                     aws_access_key_id = access_key,
                     aws_secret_access_key = secret_key)
