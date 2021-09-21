@@ -4,7 +4,7 @@ def test_base_route(app):
 
     response = app.get(url)
     response_about = app.get(about_url)
-    print(response)
+
     assert b'Welcome to the Image Saver App!' in response.get_data() 
     assert response.status_code == 200
 
