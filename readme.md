@@ -31,7 +31,7 @@ $ pip install -r requirements.txt
 ## Setup
 Before running the application, there are a few things that need to be set up.
 ### AWS
-You need to create an AWS s3 bucket to save images uploaded by users. The s3 bucket needs to be set to publically accessible with read access. <i>Please note that setting public access to a s3 bucket is not recommended by Amazon as any anonymous user can read objects from the bucket.</i> I would recommend looking into improving security and access to the s3 bucket.
+You need to create an AWS s3 bucket to save images uploaded by users. The s3 bucket needs to be set to publically accessible with read access. <i>Please note that setting public access to a s3 bucket is not recommended by Amazon as any anonymous user can read objects from the bucket.</i>
 
 You will need to then export 3 environment variables: AWS_ACCESS_KEY, AWS_SECRET_KEY, AWS_BUCKET_NAME.
 ```
@@ -48,7 +48,7 @@ $ python3 setup_db.py
 ```
 
 ## Run App
-To run the application, export a FLASK_APP environment variable as the flask application and then use the flask run command. Additionally, flask defaults to run in production mode. If you would like to run in development mode, you have to set FLASK_env to development.
+To run the application, export a FLASK_APP environment variable as the flask application and then use the flask run command. Additionally, flask defaults to run in production mode. If you would like to run in development mode, you have to set FLASK_ENV to development.
 
 ```
 $ export FLASK_APP=flaskapp
@@ -57,7 +57,7 @@ $ flask run
 ```
 
 ## Testing
-Tests were generated using the pytest library. To run the tests, run the following in the terminal:
+Tests were generated using the pytest library. To run the tests, run the following command in the terminal:
 ```
 $ pytest
 ```
