@@ -16,7 +16,7 @@ This web app allows you to create a service for users to register an account, lo
 
 ```
 # clone the repository
-$ git clone GET GITHUB LINK!!!!!
+$ git clone https://github.com/aeddeb/image-saver
 $ cd image-saver
 $ cd examples/tutorial
 ```
