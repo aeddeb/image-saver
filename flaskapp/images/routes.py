@@ -23,7 +23,7 @@ def upload():
         db.session.add(image)
         db.session.commit()
         # delete it form the temp storage
-        tmp_file = os.path.join(current_app.root_path, 'user_images', image_file)
+        tmp_file = os.path.join(current_app.root_path, 'tmp_images', image_file)
         os.remove(tmp_file)
         flash('Upload Successful.', 'success')
         return redirect(url_for('images.images'))

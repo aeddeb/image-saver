@@ -1,0 +1,1 @@
+When a user uploads an image, the image is stored temporarily in this folder until it is successfully uploaded to s3 and its metadata is saved in the database.
