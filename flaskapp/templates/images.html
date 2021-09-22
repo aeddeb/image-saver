@@ -6,18 +6,24 @@
             <h1 class="page-header">Image Gallery</h1>
         </div>
         <hr>
-    <p class="gen">
-        Click on <i>View Image</i> on any image below to open an Image Preview. The Image Preview 
-        page provides you with the options to download or delete the image.
-    </p>
-    <div class="row">
-        {% for image in images %}
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <img class="gallery" src="{{ image.s3_path }}" width="250: px">
-            <a href="{{ url_for('images.image', image_id=image.id) }}">View Image</a>
-        </div>
-        {% endfor %}
+    {% if not images %}
+        <p class="gen">Your gallery is currently empty. To start placing images into your gallery, 
+            you can <a href="{{ url_for('images.upload') }}">upload</a>
+            an image.</p>
+    {% else %}    
+        <p class="gen">
+            Click on <i>View Image</i> on any image below to open an Image Preview. The Image Preview 
+            page provides you with the options to download or delete the image.
+        </p>
+        <div class="row">
+            {% for image in images %}
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <img class="gallery" src="{{ image.s3_path }}" width="250: px">
+                <a href="{{ url_for('images.image', image_id=image.id) }}">View Image</a>
+            </div>
+            {% endfor %}
     </div>
+    {% endif %}
 </div>
 
 
